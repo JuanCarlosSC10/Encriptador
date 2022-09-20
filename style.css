@@ -1,19 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-body{
-   margin: 5% 5%;
-   display: grid;
- background-color: aqua;
+ body{ 
+    background-color: #FAF0E6;
+    margin: 25px;
+}
+.title{
+    text-align: center;
+    font-weight: lighter;
+    text-shadow:2px 5px 10px black ;
+    padding: 10px;
+    font-size: 1.2em;
+}
+.contenedor{
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    text-align: center;
 }
 
+.principal{
+    width: 50%;
+  
+}
+.texto p{
+    margin-top: 50px;
+}
+.icon-alert{
+    width: 15px;
+}
+.input-text, .resultado-text{
+    text-align: center;
+    border: none;
+    width: 100%;
+    resize: none;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 20px;
+    font-weight: bold;
+}
+textarea::-webkit-scrollbar{
+    width: 0px;
+  }
+.buttons{
+    height: 50%;
+    padding: 20px;
+    display: flex;
+   
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.button-encriptar, .button-desencriptar{
+    font-size: 1em;
+    padding: 10px;
+    width: 45%;
+    border-radius: 10px;
+    border: solid 1px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.button-encriptar:hover{
+    transform: scale(1.2);
+     background-color: #20f7a0; 
+     border: none;
+    /* box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff; */
+}
+.button-desencriptar:hover{
+    transform: scale(1.2);
+    background-color: #FA8072;
+    border: none;
+}
 .container-pantalla{
     width: 30%;
-    background-color: aliceblue;
+    height: 450px;
+    background-color: #FFFAFA;
+    border-radius: 10px;
+    filter: drop-shadow(8px 8px 8px black);
+} 
+.muñeco{
+    
+    object-fit: contain;
+    max-width: 100%;
 }
-.resultado-text{
-    width: 100%;
+footer{
+    text-align: center;
+    margin-top: 5%;
+    font-size: 20px;
 }
+
+@media (max-width: 600px) {
+    
+    .contenedor{
+        
+        flex-direction: column;
+        
+    }
+    .principal{
+        width: 100%;
+    }
+    .content-text{
+        padding-bottom: 30px;
+    }
+    
+    .container-pantalla{
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    .muñeco{
+        width: 300px;
+    }
+  }
+
+
 
