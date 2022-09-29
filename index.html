@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enccriptador de Textos</title>
+    <title>Encriptador de Textos</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Tangerine">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -19,28 +20,30 @@
     </header>
         <div class="contenedor">
             <main class="principal">
-                <form action="">
                     <section class="content-text">
                         <div class="texto">
-                            <textarea required class="input-text" name="" id="" placeholder="Ingrese texto aqui... "></textarea>
-                            <p><img class="icon-alert" src="assets/img/alerta.png" alt=""> Solo texto en minúscula y sin acento</p> 
+                            <textarea  onkeypress="return soloLetras(event); required" class="input-text" name="" id="input-text" placeholder="Ingrese texto aqui... " ></textarea>
+                            <p><img class="icon-alert" src="assets/img/alerta.png" alt=""> Solo texto en minúscula y sin acento </p> 
                         </div>
                         <div class="buttons">
-                            <button class="button-encriptar">Encriptar</button>
-                            <button class="button-desencriptar">Desencriptar</button>
+                            <button id="btn-encriptar" onclick="encriptar()" class="button-encriptar">Encriptar</button>
+                            <button id="btn-desencriptar" 
+                            onclick="desencriptar()" class="button-desencriptar">Desencriptar</button>
                         </div>
                     </section>
-                </form>
-                
             </main>
             <aside class="container-pantalla">
-                <textarea class="resultado-text" name="text-encriptado" id="text-encriptado" readonly ></textarea> 
-                <br>
+               
+                <label class="resultado-text" name="resultado-text" id="resultado-text"></label> 
                 <img class="muñeco" src="assets/img/Muñeco.png" alt="muñeco" id="img-muneco">
+                <p id="subtitle">Ningun Mensaje fue Encontrado</p>
+                <p id="subtitle-min">Ingrese el texto que desea encriptar o desencriptar</p>
+                <button class="btn-copiar" id="btn-copiar" onclick="copiar()" name="btn-copiar">Copiar</button>
             </aside>
         </div>
         <footer>
-            <h6>Copyrigth - Juan Carlos </h6>
+            <h6 id="text-footer">Desarrollado por Juan Carlos </h6>
+            <a class="img-footer" href="https://www.linkedin.com/in/juan-sc/" target="_blank"><img src="assets/img/logotipo-de-linkedin.png" alt="Icono likedin"></a> 
         </footer>
    
     <script src="script.js"></script>
