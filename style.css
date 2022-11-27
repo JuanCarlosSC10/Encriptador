@@ -1,71 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
-html {
-    height: 100%;
-}
- body{ 
+
+body {
     background-color: #FAF0E6;
+}
+button:hover{
+    transform: scale(1.1);
+}
+.contenedor {
     display: grid;
-    min-height: 100vh;
-}
-.title{
+    height: 100vh;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 0.5fr 3fr .6fr;
+    grid-template-areas:
+        "header header"
+        "entrada-texto aside"
+        "footer footer";
+    gap: 20px;
     text-align: center;
-    font-weight: bold;
-    text-shadow: 1px 2px 4px black ;
-    padding: 5px;
-    font-size: 2em;
-    letter-spacing: 0.2em;
-    margin-top: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.header {
+    grid-area: header;
+}
+
+.title {
+    text-align: center;
+    text-shadow: 1px 2px 4px black;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
     text-transform: uppercase;
-   
 }
 
-.contenedor{
-    margin: 2.5rem;
-   width: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; 
-    text-align: center;
+.principal {
+    grid-area: entrada-texto;
+    margin: 4rem 3rem 0 3rem ;
 }
 
-.principal{
-    width: 50%;
-  
+.container-pantalla {
+    grid-area: aside;
 }
-
-.texto p{
-    margin-top: 50px;
-    
+.card-munheco{
+    background-color: #FFFAFA;
+    margin: 0 5rem 0 0;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0,0, 0,0.4);
 }
-.icon-alert{
+.icon-alert {
     width: 15px;
 }
-.input-text, .resultado-text{
+.input-text,
+.resultado-text {
     text-align: center;
     border: none;
-    width: 100%;
+    width: 99%;
     resize: none;
     font-size: 1em;
     border-radius: 10px;
     padding: 20px;
     font-weight: bold;
-    word-break:break-all;
+    word-break: break-all;
+    
 }
-.resultado-text{
-    display: none;
+.input-text{
+    box-shadow: 0 2px 2px rgba(0,0, 0,0.2);
 }
-textarea::-webkit-scrollbar{
-    width: 0px;
-  }
 
-
-.buttons{
+.buttons {
     margin-top: 15px;
     height: 50%;
     display: flex;
@@ -73,8 +82,11 @@ textarea::-webkit-scrollbar{
     justify-content: space-between;
 
 }
-.button-encriptar, .button-desencriptar, .btn-copiar{
-    font-size: 1em;
+
+.button-encriptar,
+.button-desencriptar,
+.btn-copiar {
+    font-size: 1rem;
     padding: 10px;
     width: 45%;
     border-radius: 10px;
@@ -82,102 +94,94 @@ textarea::-webkit-scrollbar{
     cursor: pointer;
     font-weight: bold;
     transition: 0.5s all;
-    word-break:break-all;
+    word-break: break-all;
     position: relative;
     border: 3px solid;
     box-shadow: 8px 8px 2px black;
 }
-  
-.button-encriptar{
-    background-color: #20f7a0; 
+
+.button-encriptar {
+    background-color: #20f7a0;
     border: none;
 }
-.button-desencriptar{
+
+.button-desencriptar {
     background-color: #FA8072;
     border: none;
 }
-.btn-copiar{
-    visibility: hidden;
-    margin-bottom: 1rem;
-    position:fixed;
-    bottom: 0;
-    left: 30%;
-}
-.btn-copiar:hover{
-    transform: scale(1.1);
-    background-image: radial-gradient( #8dfff3 , #00e8f3 );
-     border: none;
-   
+
+.resultado-text {
+    display: none;
 }
 
-.button-encriptar:hover{
-    transform: scale(1.2);
-    
+textarea::-webkit-scrollbar {
+    width: 0px;
 }
-.button-desencriptar:hover{
-    transform: scale(1.2);
-    
+.muneco{
+    width: 100%;
+    max-width: 300px;
 }
-.container-pantalla{
-    width: 30%;
-    background-color: #FFFAFA;
-    border-radius: 10px;
-    filter: drop-shadow(5px 10px 10px black);
-    text-align: center;
+
+.btn-copiar {
+    display: none;
+    margin:auto;
 }
-.container-pantalla p{
-   padding: 5px 10px;
-} 
-#subtitle{
-    font-size: 1.2em;
-    font-weight: bold;
+
+.btn-copiar:hover {
+    background-image: radial-gradient(#8dfff3, #00e8f3);
+    border: none;
 }
-.muñeco{
-    
-    object-fit: contain;
-    max-width: 80%;
-    padding-top: 10px;
+
+.texto p {
+    margin-top: 3rem;
 }
-footer{
-    display:flex;
+.footer {
+    grid-area: footer;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     padding: 1rem;
+    color: #FAF0E6;
     background-image: url(assets/img/bg.jpg);
 }
-#text-footer{
-    color: #FAF0E6;
+
+#text-footer {
     padding-right: 1rem;
 }
+.container-pantalla p {
+    padding: 5px 10px;
+}
 
-@media (max-width: 600px) {
-    
-    .contenedor{
-        
-        flex-direction: column;
-        
+#subtitle {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .contenedor {
+        grid-template-columns: 100%;
+        grid-template-rows: 0.4fr 0.7fr 0.7fr 0.5fr;
+        grid-template-areas: 
+        "header"
+        "entrada-texto"
+        "aside"
+        "footer"
     }
-    .principal{
-        width: 100%;
-    }
-    .content-text{
-        padding-bottom: 30px;
-    }
-    
-    .container-pantalla{
-        width: 100%;
+    .card-munheco{
+        margin: 1rem 3rem;
+        padding: 1rem 2rem;
         border-radius: 10px;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     }
-    .muñeco{
-        width: 300px;
+
+}
+@media screen and ((min-width:768px) and (max-width: 1024px)) {
+    .principal {
+        margin: 4rem 1rem 0 1rem ;
     }
-    .buttons .btn-copiar{
-        font-size: 0.8em;
+    .card-munheco{
+        margin: 0 1rem 0 0;
     }
-    
-  }
-
-
-
+}

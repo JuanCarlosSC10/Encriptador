@@ -1,49 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador de Textos</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+    />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
-</head>
-<body>
-    <header>
-        <h1 class="title">
-            Encriptar Texto
-        </h1>
-    </header>
-        <div class="contenedor">
-            <main class="principal">
-                    <section class="content-text">
-                        <div class="texto">
-                            <textarea  onkeypress="return soloLetras(event); required" class="input-text" name="" id="input-text" placeholder="Ingrese texto aqui... " ></textarea>
-                            <p><img class="icon-alert" src="assets/img/alerta.png" alt=""> Solo texto en minúscula y sin acento </p> 
-                        </div>
-                        <div class="buttons">
-                            <button id="btn-encriptar" onclick="encriptar()" class="button-encriptar">Encriptar</button>
-                            <button id="btn-desencriptar" 
-                            onclick="desencriptar()" class="button-desencriptar">Desencriptar</button>
-                        </div>
-                    </section>
-            </main>
-            <aside class="container-pantalla">
-               
-                <label class="resultado-text" name="resultado-text" id="resultado-text"></label> 
-                <img class="muñeco" src="assets/img/Muñeco.png" alt="muñeco" id="img-muneco">
-                <p id="subtitle">Ningun Mensaje fue Encontrado</p>
-                <p id="subtitle-min">Ingrese el texto que desea encriptar o desencriptar</p>
-                <button class="btn-copiar" id="btn-copiar" onclick="copiar()" name="btn-copiar">Copiar</button>
-            </aside>
+  </head>
+  <body>
+    <div class="contenedor">
+      <header class="header">
+        <h1 class="title">Encriptar Texto</h1>
+      </header>
+      <main class="principal">
+        <section class="content-text">
+          <div class="texto">
+            <textarea
+              onkeypress="return soloLetras(event); required"
+              class="input-text"
+              name=""
+              id="input-text"
+              placeholder="Ingrese texto aqui... "
+            ></textarea>
+            <p>
+              <img class="icon-alert" src="assets/img/alerta.png" alt="" /> Solo
+              texto en minúscula y sin acento
+            </p>
+          </div>
+          <div class="buttons">
+            <button
+              id="btn-encriptar"
+              onclick="encriptar()"
+              class="button-encriptar"
+            >
+              Encriptar
+            </button>
+            <button
+              id="btn-desencriptar"
+              onclick="desencriptar()"
+              class="button-desencriptar"
+            >
+              Desencriptar
+            </button>
+          </div>
+        </section>
+      </main>
+      <aside class="container-pantalla">
+        <div class="card-munheco">
+          <label
+            class="resultado-text"
+            name="resultado-text"
+            id="resultado-text"
+          ></label>
+          <img
+            class="muneco"
+            src="assets/img/Muñeco.png"
+            alt="muñeco"
+            id="img-muneco"
+          />
+          <div class="card-contenido">
+            <p id="subtitle">Ningun mensaje fue encontrado</p>
+            <p id="subtitle-min">
+              Ingrese el texto que desea encriptar o desencriptar
+            </p>
+          </div>
+          <button
+            class="btn-copiar"
+            id="btn-copiar"
+            onclick="copiar()"
+            name="btn-copiar"
+          >
+            Copiar
+          </button>
         </div>
-        <footer>
-            <h6 id="text-footer">Desarrollado por Juan Carlos </h6>
-            <a class="img-footer" href="https://www.linkedin.com/in/juan-sc/" target="_blank"><img src="assets/img/logotipo-de-linkedin.png" alt="Icono likedin"></a> 
-        </footer>
-        <script src="script.js"></script>
-</body>
+      </aside>
+      <footer class="footer">
+        <h6 id="text-footer">Desarrollado por Juan Carlos</h6>
+        <a
+          class="img-footer"
+          href="https://www.linkedin.com/in/juan-sc/"
+          target="_blank"
+          ><img src="assets/img/logotipo-de-linkedin.png" alt="Icono likedin"
+        /></a>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

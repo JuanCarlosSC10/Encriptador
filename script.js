@@ -13,7 +13,7 @@ textarea.addEventListener("keyup", (e) => {
 
 
 function showaside(){
-  document.getElementById("btn-copiar").style.visibility = "visible";
+  document.getElementById("btn-copiar").style.display = "block";
   document.getElementById("subtitle").style.visibility = "hidden";
   document.getElementById("subtitle-min").style.visibility = "hidden";
 }
@@ -74,7 +74,7 @@ function copiar() {
   content.select(); //Selecciono el texto encriptado o desencriptado
   document.execCommand("copy"); //Copio el texto
   document.body.removeChild(content); // Se elimina la caja de texto temporal.
-  document.getElementById("btn-copiar").style.visibility = "hidden";
+  document.getElementById("btn-copiar").style.display = "none";
   swal("Portapapeles","Mensaje copiado al portapapeles","success"); 
   limpiarcampos();
   mostrarmuneco(); 
